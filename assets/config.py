@@ -6,16 +6,18 @@ class Config:
   
 #Player settings, only change if you're a developer or tester. (CHANGING THIS WILL MAKE YOUR GAMEPLAY BORING!)
 class Char:
-  charName = "Aton"
+  classe = 0
+  Name = "garbage"
+  mana = 0
   health = 100
   attack = 1.3
-  weapon = ""
+  weapon = "garbage"
   defense = 1.0
   coins = 6
   honor = 0
   option = 0
   deadEnemy = False
   deadPlayer = False
-  where = "Eldoria"
+  where = "garbage"
 
 

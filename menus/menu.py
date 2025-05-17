@@ -9,6 +9,7 @@ from assets.config import Config
 def menu():
 
   from areas.tavern import tavern
+  from player.status import status
 
   while True:
     clearScreen()

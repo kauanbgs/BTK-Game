@@ -2,6 +2,7 @@
 
 import os
 import time
+from assets.config import Char
 
 startTime = 0
 
@@ -22,3 +23,18 @@ def typedPrint(text, speed):
   for i in text:
     print(i, end='', flush=True)
     time.sleep(speed)
+
+def classUpdate():
+  if Char.Name == "Aton":
+    Char.classe = 1
+    Char.health = 100
+    Char.mana = 50
+    Char.attack = 1.5
+    Char.weapon = "Espada gasta"
+  else:
+    Char.classe = 2
+    Char.health = 120
+    Char.mana = 100
+    Char.attack = 1.3
+    Char.weapon = "Cajado antigo"
+
