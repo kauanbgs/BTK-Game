@@ -21,6 +21,8 @@ def areas():
   print(f"Você está atualmente em: {Char.where}\n")
   print("Você pode ir para: ")
   print("[1] - Procurar vila")
+  if Char.veioEldoria:
+    print("[2] - Eldoria")
     
   option = input("Escolha uma opção: ")
 
@@ -38,10 +40,18 @@ def areas():
       typedPrint("Você encontrou Eldoria!\n", Config.speed)
       time.sleep(0.5)
       eldoriaIntro()
-    # elif randomVillage() == "Skalice":
-    #   typedPrint("Você encontrou Skalice!\n", Config.speed)
-    #   time.sleep(0.5)
-    #   skaliceIntro()
+  elif option == 2:
+    if Char.veioEldoria:
+      clearScreen()
+      typedPrint("Você está indo para Eldoria...\n", Config.speed)
+      time.sleep(0.5)
+      eldoriaIntro()
+    else:
+      clearScreen()
+      print(f"{Char.name} ainda não desbloqueou isso.")
+      time.sleep(1)
+      areas()
+    
 
   
   else:

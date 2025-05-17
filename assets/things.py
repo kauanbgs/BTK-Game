@@ -40,11 +40,26 @@ def classUpdate():
     Char.attack = 1.3
     Char.weapon = "Cajado antigo"
 
-
 def randomVillage():
-  choice = random.choice(Village.village_names)
-  Village.village_names.remove(choice)
-  if len(Village.village_names) == 0:
-    return "Você não pode mais visitar vilas."
-  return choice
+    if not Village.village_names:
+        return "Você não pode mais visitar vilas."
+    
+    choice = random.choice(Village.village_names)
+    Village.village_names.remove(choice)
+    return choice
 
+def revealChar(npc_name, initial_text, final_text, speed=0.045):
+    clearScreen()
+    print("???: ", end="")
+    typedPrint(initial_text + "\n", speed)
+    
+    print("???: ", end="")
+    typedPrint(f"Meu nome é {npc_name}", speed)
+    
+    time.sleep(1)
+    clearScreen()
+    
+    print(f"{npc_name}: {initial_text}")
+    print(f"{npc_name}: Meu nome é {npc_name}, ", end="")
+    typedPrint(final_text + "\n", speed)
+    time.sleep(2)

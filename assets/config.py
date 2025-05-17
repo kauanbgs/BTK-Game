@@ -21,5 +21,6 @@ class Char:
   where = "garbage"
 
   veioEldoria = False
+  veioTavern = False
 
 

@@ -13,11 +13,11 @@ from areas.tavern import tavern
 def eldoriaIntro():
   if Char.veioEldoria:
     eldoria()
-  typedPrint(f"Após uma longa jornada pelas trilhas poeirentas e sob o sol escaldante, finalmente {Char.name} avistou Eldoria.\n", Config.speed)
+  typedPrint(f"Após uma longa jornada pelas trilhas poeirentas e sob o sol escaldante, finalmente {Char.Name} avistou Eldoria.\n", Config.speed)
   typedPrint("Uma vila totalmente composta por malucos, com a personalidade extremamente forte.\n", Config.speed)
   time.sleep(1)
-  typedPrint(f"Aqui, {Char.name} pode acessar a Taverna.\n", Config.speed)
-  time.sleep(0.5)
+  typedPrint(f"Aqui, {Char.Name} pode acessar a Taverna.\n", Config.speed)
+  time.sleep(2.5)
   eldoria()
 
   

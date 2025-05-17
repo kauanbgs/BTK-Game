@@ -6,6 +6,9 @@ from assets.itens import Itens
 from assets.things import clearScreen
 from menus.menu import menu
 from player.inventory import inventoryItens
+from assets.config import Config
+from assets.things import typedPrint
+from assets.things import revealChar
 
 def comprar_item(item):
     name = item["nome"]
@@ -20,6 +23,14 @@ def comprar_item(item):
         print("Você não tem moedas suficientes!")
 
     time.sleep(2)
+
+def tavernIntro():
+    if Char.veioTavern:
+        tavern()
+    Char.veioTavern = True
+    clearScreen()
+    revealChar("\033[33mGrog\033[0m", "Eai, sô! Seja bem vindo a taverna!", "to vendendo essas paradas ai, quarque coisa ce da um toque!" )
+    tavern()
 
 def tavern():
     Char.where = "Taverna"
@@ -39,7 +50,7 @@ def tavern():
 
         if option == 0:
             clearScreen()
-            print("Saindo da taverna...")
+            typedPrint("Saindo da taverna...", Config.speed)
             time.sleep(1)
             menu()
             break
@@ -57,4 +68,4 @@ def mostrar_opcoes():
     print(f"Você tem {Char.coins} moedas, e está na {Char.where}!")
     print("[0] - Voltar")
     for index, item in enumerate(Itens.tavern, start=1):
-      print(f"[{index}] - {item['nome']} - {item['preco']} moedas")
+      print(f"\033[33mGrog\033[0m: [{index}] - {item['nome']} - {item['preco']} moedas")
