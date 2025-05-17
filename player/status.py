@@ -1,6 +1,8 @@
 #File made by: Kauan
 
-from resources.imports import *
+import os, time
+from assets.config import Char
+from assets.things import clearScreen
 
 #Just print the status.
 def status():

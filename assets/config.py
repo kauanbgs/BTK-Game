@@ -18,3 +18,4 @@ class Char:
   deadPlayer = False
   where = "Eldoria"
 
+

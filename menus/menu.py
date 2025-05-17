@@ -1,8 +1,15 @@
 #File made by: Kauan
 
-from resources.imports import *
+import time
+from assets.things import clearScreen
+from assets.things import typedPrint
+from assets.config import Config
+
 
 def menu():
+
+  from areas.tavern import tavern
+
   while True:
     clearScreen()
     print("----------------Eldoria----------------")
