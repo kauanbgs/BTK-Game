@@ -6,7 +6,7 @@ class Config:
   
 #Player settings, only change if you're a developer or tester. (CHANGING THIS WILL MAKE YOUR GAMEPLAY BORING!)
 class Char:
-  classe = 0
+  classplayer = 0
   Name = "garbage"
   mana = 0
   health = 100
@@ -19,5 +19,7 @@ class Char:
   deadEnemy = False
   deadPlayer = False
   where = "garbage"
+
+  veioEldoria = False
 
 

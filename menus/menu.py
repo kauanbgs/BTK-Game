@@ -6,19 +6,18 @@ from assets.things import typedPrint
 from assets.config import Config
 
 
-def menu():
 
+def menu():
+  from menus.areas import areas
   from areas.tavern import tavern
   from player.status import status
 
   while True:
     clearScreen()
-    print("----------------Eldoria----------------")
+    print("----------------Praia----------------")
     print("[1] - Inventário")
     print("[2] - Status")
-    print("[3] - Taverna")
-    print("[4] - Explorar") 
-    print("[5] - Ferreiro")
+    print("[3] - Explorar") 
 
 
     option = input("Escolha uma opção: ")
@@ -48,9 +47,5 @@ def menu():
       status()
     elif option == 3:
       clearScreen()
-      typedPrint("Entrando na taverna...", Config.speed)
-      tavern()
-    elif option == 4:
-      clearScreen()
-      typedPrint("Procurando áreas...", Config.speed)
+      typedPrint("Procurando areas...", Config.speed)
       areas()
