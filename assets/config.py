@@ -10,7 +10,8 @@ class Char:
   Name = "garbage"
   mana = 0
   health = 100
-  attack = 1.3
+  attack = 0
+  attack_base = 1.3
   weapon = "garbage"
   defense = 1.0
   coins = 6
@@ -22,7 +23,7 @@ class Char:
   item = "garbage"
 
   villagesVisited = 0
-
+  foiFerreiro = False
   veioEldoria = False
   veioBrumaria = False
   veioVentogard = False

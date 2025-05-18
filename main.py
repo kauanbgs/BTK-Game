@@ -7,6 +7,7 @@ from history.villages.villageVentogard import ventogardIntro
 from areas.fundition import joinItens
 from player.inventory import inventory
 from areas.fundition import showItens
+from areas.blacksmith import blacksmith
 
 # joinItens("pocao de cura", "pluma de fenix")
-showItens()
+menu()

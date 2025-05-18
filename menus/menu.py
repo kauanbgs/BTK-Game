@@ -4,6 +4,7 @@ import time
 from assets.things import clearScreen
 from assets.things import typedPrint
 from assets.config import Config
+from assets.things import tools
 
 
 
@@ -53,7 +54,6 @@ def menu():
       typedPrint("Procurando areas...", Config.speed)
       areas()
     elif option == 4:
-      clearScreen(
+      clearScreen()
       typedPrint("Procurando equipamentos...", Config.speed)
-      
-      )
+      tools()

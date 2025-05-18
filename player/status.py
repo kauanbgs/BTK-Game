@@ -30,11 +30,11 @@ from menus.menu import menu
 def status():
     clearScreen()
     print(f"Nome: {Char.Name}")
-    print(f"\033[32mVida:\033[0m: {Char.health}")
-    print(f"\033[36mMana:\033[0m: {Char.mana}")
-    print(f"\033[31mAtaque:\033[0m: {Char.attack}")
-    print(f"\033[35mArma\033[0m: {Char.weapon}")
-    print(f"\033[33mMoedas:\033[0m: {Char.coins}")
+    print(f"\033[32mVida:\033[0m {Char.health}")
+    print(f"\033[36mMana:\033[0m {Char.mana}")
+    print(f"\033[31mAtaque:\033[0m {Char.attack}")
+    print(f"\033[35mArma:\033[0m {Char.weapon}")
+    print(f"\033[33mMoedas:\033[0m {Char.coins}")
     print("")
     while True:
       print("[0] - Voltar")

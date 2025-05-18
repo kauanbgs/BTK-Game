@@ -6,6 +6,7 @@ import time
 
 
 inventoryItens = []
+weaponsInventory = []
 
 def inventory():
   from assets.things import clearScreen

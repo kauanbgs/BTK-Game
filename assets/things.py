@@ -4,9 +4,11 @@ import random
 import os
 import time
 from assets.config import Char
+from assets.config import Config
 from assets.itens import Village
 from assets.itens import Flashback
 from player.inventory import inventory
+from player.inventory import weaponsInventory
 from assets.itens import Itens
 
 startTime = 0
@@ -35,13 +37,13 @@ def classUpdate():
     Char.health = 100
     Char.mana = 50
     Char.attack = 1.5
-    Char.weapon = "Espada gasta"
+    weaponsInventory.append("Espada gasta")
   else:
     Char.classplayer = 2
     Char.health = 120
     Char.mana = 100
     Char.attack = 1.3
-    Char.weapon = "Cajado antigo"
+    weaponsInventory.append("Cajado antigo")
 
 def randomVillage():
     if not Village.village_names:
@@ -113,5 +115,152 @@ def updateStatus(item):
 
   time.sleep(2)
   inventory()
-  
+
+def weaponThings():
+  print(f"Sua arma atual é: {Char.weapon}")
+  print("[0] - Voltar")
+  print("[1] - Guardar")
+  print("[2] - Vender")
+  option = input("Escolha uma opção: ")
+
+  if not option.isdigit():
+    clearScreen()
+    print("Opção inválida!")
+    time.sleep(1)
+    weaponThings()
+  else:
+    option = int(option)
+
+  if option == 0:
+    clearScreen()
+    print("Voltando...")
+    time.sleep(1)
+    return
+  elif option == 1:
+    clearScreen()
+    typedPrint("Guardando arma...", Config.speed)
+    time.sleep(1)
+    if Char.classplayer == 1:
+      Char.weapon = "Espada gasta"
+    else:
+      Char.weapon = "Cajado antigo"
+    refreshDamage()
+
+def refreshDamage():
+    base = Char.attack_base  # ataque base do personagem
     
+    if Char.weapon == "Espada de Madeira":
+        Char.attack = base + 0.5
+    elif Char.weapon == "Espada de Prata":
+        Char.attack = base + 1.0
+    elif Char.weapon == "Espada de Ouro":
+        Char.attack = base + 1.5
+    elif Char.weapon == "Espada de Platina":
+        Char.attack = base + 2.0
+    elif Char.weapon == "Espada de Diamante":
+        Char.attack = base + 2.5
+
+    # Personalizadas - manualmente
+    elif Char.weapon == "Espada de Madeira Pegajosa":
+        Char.attack = base + 0.6
+    elif Char.weapon == "Espada de Madeira Inflamavel":
+        Char.attack = base + 0.7
+    elif Char.weapon == "Espada de Madeira Resistente":
+        Char.attack = base + 0.8
+    elif Char.weapon == "Espada de Madeira Afiada":
+        Char.attack = base + 1.0
+    elif Char.weapon == "Espada de Madeira Magica":
+        Char.attack = base + 1.3
+
+    elif Char.weapon == "Espada de Prata Pegajosa":
+        Char.attack = base + 1.5
+    elif Char.weapon == "Espada de Prata Inflamavel":
+        Char.attack = base + 1.8
+    elif Char.weapon == "Espada de Prata Resistente":
+        Char.attack = base + 2.0
+    elif Char.weapon == "Espada de Prata Afiada":
+        Char.attack = base + 2.3
+    elif Char.weapon == "Espada de Prata Magica":
+        Char.attack = base + 2.5
+
+    elif Char.weapon == "Espada de Ouro Pegajosa":
+        Char.attack = base + 2.8
+    elif Char.weapon == "Espada de Ouro Inflamavel":
+        Char.attack = base + 3.0
+    elif Char.weapon == "Espada de Ouro Resistente":
+        Char.attack = base + 3.2
+    elif Char.weapon == "Espada de Ouro Afiada":
+        Char.attack = base + 3.4
+    elif Char.weapon == "Espada de Ouro Magica":
+        Char.attack = base + 3.5
+
+    elif Char.weapon == "Espada de Platina Pegajosa":
+        Char.attack = base + 3.7
+    elif Char.weapon == "Espada de Platina Inflamavel":
+        Char.attack = base + 3.8
+    elif Char.weapon == "Espada de Platina Resistente":
+        Char.attack = base + 4.0
+    elif Char.weapon == "Espada de Platina Afiada":
+        Char.attack = base + 4.2
+    elif Char.weapon == "Espada de Platina Magica":
+        Char.attack = base + 4.5
+
+    elif Char.weapon == "Espada de Diamante Pegajosa":
+        Char.attack = base + 4.8
+    elif Char.weapon == "Espada de Diamante Inflamavel":
+        Char.attack = base + 5.0
+    elif Char.weapon == "Espada de Diamante Resistente":
+        Char.attack = base + 5.2
+    elif Char.weapon == "Espada de Diamante Afiada":
+        Char.attack = base + 5.4
+    elif Char.weapon == "Espada de Diamante Magica":
+        Char.attack = base + 5.5
+
+    else:
+        Char.attack = base
+  
+def tools():
+    clearScreen()
+    print("=== Equipamento ===")
+    print("[0] - Voltar")
+    print(f"Arma equipada: {Char.weapon}")
+
+    print("\n=== Armas no inventário ===")
+    armas_disponiveis = []
+
+    for i in weaponsInventory:
+        if i != Char.weapon:
+            armas_disponiveis.append(i)
+
+    for index, arma in enumerate(armas_disponiveis):
+        print(f"[{index + 1}] - {arma}")
+
+    print("")
+    option = input("Escolha um item para equipar: ")
+
+    if not option.isdigit():
+        os.system('cls')
+        print("Opção inválida!")
+        time.sleep(1)
+        os.system('cls')
+        tools()
+    else:
+        option = int(option)
+
+        if option == 0:
+            os.system('cls')
+            return
+
+        if 1 <= option <= len(armas_disponiveis):
+            Char.weapon = armas_disponiveis[option - 1]
+            os.system('cls')
+            print(f"Você equipou: {Char.weapon}")
+            refreshDamage()
+            time.sleep(1)
+            os.system('cls')
+        else:
+            os.system('cls')
+            print("Opção inválida!")
+            time.sleep(1)
+            os.system('cls')
+            tools()

@@ -9,7 +9,7 @@ class Itens:
     ]
 
     blacksmith = [
-        {"nome": "Espada de Madeira", "preco": 5, "dano": 0.3},
+        {"nome": "Espada de Madeira", "preco": 5, "dano": 0.5},
         {"nome": "Espada de Prata", "preco": 10, "dano": 1.0},
         {"nome": "Espada de Ouro", "preco": 20, "dano": 2.0},
         {"nome": "Espada de Platina", "preco": 40, "dano": 3.0},
@@ -81,13 +81,13 @@ class Itens:
     # Espadas personalizadas
     "Espada de Madeira Pegajosa": {
         "tipo": "arma",
-        "dano": 0.5,
+        "dano": 0.6,
         "utilizavel": False,
         "fundivel": False
     },
     "Espada de Madeira Inflamavel": {
         "tipo": "arma",
-        "dano": 0.6,
+        "dano": 0.7,
         "utilizavel": False,
         "fundivel": False
     },
