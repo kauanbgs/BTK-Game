@@ -20,7 +20,11 @@ class Char:
   deadPlayer = False
   where = "garbage"
 
+  villagesVisited = 0
+
   veioEldoria = False
+  veioBrumaria = False
+  veioVentogard = False
   veioTavern = False
 
 

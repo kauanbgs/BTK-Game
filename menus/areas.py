@@ -10,6 +10,8 @@ from assets.config import Char
 from menus.menu import menu
 from assets.things import randomVillage
 from history.villages.villageEldoria import eldoriaIntro
+from history.villages.villageBrumaria import brumariaIntro
+from history.villages.villageVentogard import ventogardIntro
 
 
 def areas():
@@ -22,7 +24,11 @@ def areas():
   print("Você pode ir para: ")
   print("[1] - Procurar vila")
   if Char.veioEldoria:
-    print("[2] - Eldoria")
+    print("[2] - Eldoria - TAVERNA")
+  if Char.veioBrumaria:
+    print("[3] - Brumaria - FERREIRO")
+  if Char.veioVentogard:
+    print("[4] - Ventogard - MEMÓRIAS")
     
   option = input("Escolha uma opção: ")
 
@@ -40,16 +46,49 @@ def areas():
       typedPrint("Você encontrou Eldoria!\n", Config.speed)
       time.sleep(0.5)
       eldoriaIntro()
+    if randomVillage() == "Brumaria":
+      typedPrint("Você encontrou Brumaria!\n", Config.speed)
+      time.sleep(0.5)
+      brumariaIntro()
+    if randomVillage() == "Ventogard":
+      typedPrint("Você encontrou Ventogard!\n", Config.speed)
+      time.sleep(0.5)
+      ventogardIntro()
+
   elif option == 2:
     if Char.veioEldoria:
       clearScreen()
-      typedPrint("Você está indo para Eldoria...\n", Config.speed)
+      typedPrint(f"{Char.Name} está indo para Eldoria...\n", Config.speed)
       time.sleep(0.5)
       eldoriaIntro()
     else:
       clearScreen()
       print(f"{Char.name} ainda não desbloqueou isso.")
-      time.sleep(1)
+      time.sleep(2)
+      areas()
+
+  elif option == 3:
+    if Char.veioBrumaria:
+      clearScreen()
+      typedPrint(f"{Char.Name} está indo para Brumaria...\n", Config.speed)
+      time.sleep(0.5)
+      brumariaIntro()
+    else:
+      clearScreen()
+      print(f"{Char.name} ainda não desbloqueou isso.")
+      time.sleep(2)
+      areas()
+
+  elif option == 3:
+    if Char.veioVentogard:
+      clearScreen()
+      typedPrint(f"{Char.Name} está indo para Ventogard...\n", Config.speed)
+      time.sleep(0.5)
+      brumariaIntro()
+    else:
+      clearScreen()
+      print(f"{Char.name} ainda não desbloqueou isso.")
+      time.sleep(2)
       areas()
     
 

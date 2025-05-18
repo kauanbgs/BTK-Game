@@ -10,37 +10,34 @@ from assets.config import Config
 from assets.config import Char
 from areas.tavern import tavern
 
-def eldoriaIntro():
-  if Char.veioEldoria:
-    eldoria()
+def brumariaIntro():
+  if Char.veioBrumaria:
+    brumaria()
   Char.villagesVisited += 1
   clearScreen( )
-  typedPrint(f"Após uma longa jornada pelas trilhas poeirentas e sob o sol escaldante, finalmente {Char.Name} avistou Eldoria.\n", Config.speed)
-  typedPrint("Uma vila totalmente composta por malucos, com a personalidade extremamente forte.\n", Config.speed)
+  typedPrint(f"Depois de muito tempo caminhando, {Char.Name} avistou Brumaria.\n", Config.speed)
+  typedPrint("Onde as mais belas armas das dez vilas são formadas, bem vindo à terra da forja!\n", Config.speed)
   time.sleep(1)
   print("")
-  typedPrint(f"Aqui, {Char.Name} pode acessar a Taverna.\n", Config.speed)
+  typedPrint(f"Aqui, {Char.Name} pode acessar o Ferreiro.\n", Config.speed)
   time.sleep(2.5)
-  eldoria()
-
-  
-  
+  brumaria()
 
 
-def eldoria():
-  Char.veioEldoria = True
-  Char.where = "Eldoria"
+def brumaria():
+  Char.veioBrumaria = True
+  Char.where = "Brumaria"
   clearScreen()
   print(f"Você está atualmente em: {Char.where}\n")
   print("[0] - Voltar a praia")
-  print("[1] - Taverna")
+  print("[1] - Ferreiro")
   option = input("Escolha uma opção: ")
 
   if not option.isdigit():
     clearScreen()
     print("Opção inválida!")
     time.sleep(1)
-    eldoria()
+    brumaria()
   else:
     option = int(option)
   
@@ -48,7 +45,7 @@ def eldoria():
     clearScreen()
     print("Opção não existente.")
     time.sleep(1)
-    eldoria()
+    brumaria()
 
   elif option == 0:
     clearScreen()
@@ -57,8 +54,8 @@ def eldoria():
     menu()
   elif option == 1:
     clearScreen()
-    typedPrint("Entrando na taverna...", Config.speed)
+    typedPrint("Encontrando o ferreiro...", Config.speed)
     time.sleep(.3)
-    tavern()
+    blacksmith()
 
 

@@ -5,6 +5,7 @@ import os
 import time
 from assets.config import Char
 from assets.itens import Village
+from assets.itens import Flashback
 
 startTime = 0
 
@@ -46,6 +47,14 @@ def randomVillage():
     
     choice = random.choice(Village.village_names)
     Village.village_names.remove(choice)
+    return choice
+
+def flashback():
+    if not Flashback.flashbacks:
+        return "Não existem mais flashbacks."
+    
+    choice = random.choice(Flashback.flashbacks)
+    Flashback.flashbacks.remove(choice)
     return choice
 
 def revealChar(npc_name, initial_text, final_text, speed=0.045):
