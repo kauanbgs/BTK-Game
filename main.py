@@ -6,6 +6,7 @@ from menus.classSelection import start
 from history.villages.villageVentogard import ventogardIntro
 from areas.fundition import joinItens
 from player.inventory import inventory
+from areas.fundition import showItens
 
 # joinItens("pocao de cura", "pluma de fenix")
-inventory()
+showItens()

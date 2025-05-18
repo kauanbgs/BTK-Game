@@ -9,11 +9,11 @@ class Itens:
     ]
 
     blacksmith = [
-        {"nome": "Espada de Madeira", "preco": 5},
-        {"nome": "Espada de Prata", "preco": 10},
-        {"nome": "Espada de Ouro", "preco": 20},
-        {"nome": "Espada de Platina", "preco": 40},
-        {"nome": "Espada de Diamante", "preco": 60},
+        {"nome": "Espada de Madeira", "preco": 5, "dano": 0.3},
+        {"nome": "Espada de Prata", "preco": 10, "dano": 1.0},
+        {"nome": "Espada de Ouro", "preco": 20, "dano": 2.0},
+        {"nome": "Espada de Platina", "preco": 40, "dano": 3.0},
+        {"nome": "Espada de Diamante", "preco": 60, "dano": 4.5},
     ]
 
     base_itens = {
@@ -21,22 +21,26 @@ class Itens:
         "tipo": "arma",
         "dano": 10,
         "peso": 5,
-        "utilizavel": False
+        "utilizavel": False,
+        "fundivel": True
     },
     "Pocao de cura": {
         "tipo": "consumível",
         "cura": 20,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": True
     },
     "Pocao de mana": {
         "tipo": "consumível",
         "mana": 20,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": True
     },
     "Pocao de forca": {
         "tipo": "consumível",
         "forca": 0.3,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": True
     },
     }
 
@@ -44,137 +48,282 @@ class Itens:
     "Bola de slime": {
         "tipo": "material",
         "propriedades": ["pegajoso", "maleável"],
-        "utilizavel": False
+        "utilizavel": False,
+        "fundivel": True
     },
     "Essencia de fogo": {
         "tipo": "material",
         "propriedades": ["inflamável", "energético"],
-        "utilizavel": False
+        "utilizavel": False,
+        "fundivel": True
     },
     "Escama de dragao": {
         "tipo": "material",
         "propriedades": ["resistente", "rígido", "mágico"],
-        "utilizavel": False
+        "utilizavel": False,
+        "fundivel": True
     },
     "Garra de lobo": {
         "tipo": "material",
         "propriedades": ["afiada", "leve", "letal"],
-        "utilizavel": False
+        "utilizavel": False,
+        "fundivel": True
     },
     "Pluma de fenix": {
         "tipo": "material",
         "propriedades": ["leve", "místico", "regenerativo"],
-        "utilizavel": False
+        "utilizavel": False,
+        "fundivel": True
     },
     }
 
     Itens_personalizados = {
     # Espadas personalizadas
-    "Espada pegajosa": {
+    "Espada de Madeira Pegajosa": {
         "tipo": "arma",
-        "dano": 10,
-        "utilizavel": False
+        "dano": 0.5,
+        "utilizavel": False,
+        "fundivel": False
     },
-    "Espada inflamavel": {
+    "Espada de Madeira Inflamavel": {
         "tipo": "arma",
-        "dano": 12,
-        "utilizavel": False
+        "dano": 0.6,
+        "utilizavel": False,
+        "fundivel": False
     },
-    "Espada resistente": {
+    "Espada de Madeira Resistente": {
         "tipo": "arma",
-        "dano": 15,
-        "utilizavel": False
+        "dano": 0.8,
+        "utilizavel": False,
+        "fundivel": False
     },
-    "Espada afiada": {
+    "Espada de Madeira Afiada": {
         "tipo": "arma",
-        "dano": 18,
-        "utilizavel": False
+        "dano": 1.0,
+        "utilizavel": False,
+        "fundivel": False
     },
-    "Espada magica": {
+    "Espada de Madeira Magica": {
         "tipo": "arma",
-        "dano": 20,
-        "utilizavel": False
+        "dano": 1.3,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Prata Pegajosa": {
+        "tipo": "arma",
+        "dano": 1.5,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Prata Inflamavel": {
+        "tipo": "arma",
+        "dano": 1.8,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Prata Resistente": {
+        "tipo": "arma",
+        "dano": 2.0,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Prata Afiada": {
+        "tipo": "arma",
+        "dano": 2.3,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Prata Magica": {
+        "tipo": "arma",
+        "dano": 2.5,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Ouro Pegajosa": {
+        "tipo": "arma",
+        "dano": 2.8,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Ouro Inflamavel": {
+        "tipo": "arma",
+        "dano": 3.0,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Ouro Resistente": {
+        "tipo": "arma",
+        "dano": 3.2,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Ouro Afiada": {
+        "tipo": "arma",
+        "dano": 3.4,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Ouro Magica": {
+        "tipo": "arma",
+        "dano": 3.5,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Platina Pegajosa": {
+        "tipo": "arma",
+        "dano": 3.7,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Platina Inflamavel": {
+        "tipo": "arma",
+        "dano": 3.8,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Platina Resistente": {
+        "tipo": "arma",
+        "dano": 4.0,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Platina Afiada": {
+        "tipo": "arma",
+        "dano": 4.2,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Platina Magica": {
+        "tipo": "arma",
+        "dano": 4.5,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Diamante Pegajosa": {
+        "tipo": "arma",
+        "dano": 4.8,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Diamante Inflamavel": {
+        "tipo": "arma",
+        "dano": 5.0,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Diamante Resistente": {
+        "tipo": "arma",
+        "dano": 5.2,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Diamante Afiada": {
+        "tipo": "arma",
+        "dano": 5.4,
+        "utilizavel": False,
+        "fundivel": False
+    },
+    "Espada de Diamante Magica": {
+        "tipo": "arma",
+        "dano": 5.5,
+        "utilizavel": False,
+        "fundivel": False
     },
 
     # Poções de cura personalizadas
-    "Pocao pegajosa de cura": {
+    "Pocao Pegajosa de Cura": {
         "tipo": "consumivel",
         "cura": 25,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao ardente de cura": {
+    "Pocao Ardente de Cura": {
         "tipo": "consumivel",
         "cura": 30,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao resistente de cura": {
+    "Pocao Resistente de Cura": {
         "tipo": "consumivel",
         "cura": 35,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao cortante de cura": {
+    "Pocao Cortante de Cura": {
         "tipo": "consumivel",
         "cura": 40,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao magica regenerativa": {
+    "Pocao Magica Regenerativa": {
         "tipo": "consumivel",
         "cura": 50,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
 
     # Poções de mana personalizadas
-    "Pocao pegajosa de mana": {
+    "Pocao Pegajosa de Mana": {
         "tipo": "consumivel",
         "mana": 25,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao energizante de mana": {
+    "Pocao Energizante de Mana": {
         "tipo": "consumivel",
         "mana": 30,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao encantada de mana": {
+    "Pocao Encantada de Mana": {
         "tipo": "consumivel",
         "mana": 40,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao aguçada de mana": {
+    "Pocao Aguçada de Mana": {
         "tipo": "consumivel",
         "mana": 50,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao de mana mistica": {
+    "Pocao de Mana Mistica": {
         "tipo": "consumivel",
         "mana": 60,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
 
     # Poções de força personalizadas
-    "Pocao flexivel de forca": {
+    "Pocao Flexivel de Forca": {
         "tipo": "consumivel",
         "forca": 0.7,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao de forca ardente": {
+    "Pocao de Forca Ardente": {
         "tipo": "consumivel",
         "forca": 1,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao de forca escamada": {
+    "Pocao de Forca Escamada": {
         "tipo": "consumivel",
         "forca": 1.3,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao de forca selvagem": {
+    "Pocao de Forca Selvagem": {
         "tipo": "consumivel",
         "forca": 1.5,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
-    "Pocao de forca renascente": {
+    "Pocao de Forca Renascente": {
         "tipo": "consumivel",
         "forca": 2,
-        "utilizavel": True
+        "utilizavel": True,
+        "fundivel": False
     },
 }
 

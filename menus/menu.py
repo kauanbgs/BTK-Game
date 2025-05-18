@@ -20,6 +20,7 @@ def menu():
     print("[1] - Inventário")
     print("[2] - Status")
     print("[3] - Explorar") 
+    print("[4] - Equipamentos")
 
 
     option = input("Escolha uma opção: ")
@@ -51,3 +52,8 @@ def menu():
       clearScreen()
       typedPrint("Procurando areas...", Config.speed)
       areas()
+    elif option == 4:
+      clearScreen(
+      typedPrint("Procurando equipamentos...", Config.speed)
+      
+      )

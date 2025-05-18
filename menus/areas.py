@@ -20,9 +20,10 @@ def areas():
   from assets.things import typedPrint
 
   clearScreen()
-  Char.where = "Praia"
+  Char.where = "Placa de Sinalização"
   print(f"Você está atualmente em: {Char.where}\n")
   print("Você pode ir para: ")
+  print("[0] - Voltar a praia")
   print("[1] - Procurar vila")
   if Char.veioEldoria:
     print("[2] - Eldoria - TAVERNA")
@@ -40,6 +41,13 @@ def areas():
     areas()
   else:
     option = int(option)
+
+  if option == 0:
+    clearScreen()
+    typedPrint("voltando para a praia...\n", Config.speed)
+    time.sleep(0.5)
+    menu()
+    
   
   if option == 1:
     clearScreen()

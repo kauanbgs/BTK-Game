@@ -5,7 +5,7 @@ import time
 
 
 
-inventoryItens = ["Pocao pegajosa de cura", "Pocao de cura", "Pocao de forca", "Pocao pegajosa de mana"]
+inventoryItens = []
 
 def inventory():
   from assets.things import clearScreen
