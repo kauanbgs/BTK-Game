@@ -6,6 +6,8 @@ import time
 from assets.config import Char
 from assets.itens import Village
 from assets.itens import Flashback
+from player.inventory import inventory
+from assets.itens import Itens
 
 startTime = 0
 
@@ -72,3 +74,44 @@ def revealChar(npc_name, initial_text, final_text, speed=0.045):
     print(f"{npc_name}: Meu nome é {npc_name}, ", end="")
     typedPrint(final_text + "\n", speed)
     time.sleep(2)
+
+def updateStatus(item):
+  from player.inventory import inventory, inventoryItens
+
+  clearScreen()
+
+  dados = {}
+  if item in Itens.base_itens:
+    dados = Itens.base_itens[item]
+  elif item in Itens.Itens_personalizados:
+    dados = Itens.Itens_personalizados[item]
+  else:
+    print("Item inválido para uso.")
+    time.sleep(1)
+    inventory()
+    return
+
+  inventoryItens.remove(item)
+
+  efeito_aplicado = False
+
+  if "cura" in dados:
+    Char.health += dados["cura"]
+    print(f"Você ganhou {dados['cura']} de vida! Sua vida atual é: {Char.health}")
+    efeito_aplicado = True
+  if "mana" in dados:
+    Char.mana += dados["mana"]
+    print(f"Você recuperou {dados['mana']} de mana! Sua mana atual é: {Char.mana}")
+    efeito_aplicado = True
+  if "forca" in dados:
+    Char.attack += dados["forca"]
+    print(f"Você ganhou {dados['forca']} de força! Sua força atual é: {Char.attack}")
+    efeito_aplicado = True
+
+  if not efeito_aplicado:
+    print("Esse item não teve efeito.")
+
+  time.sleep(2)
+  inventory()
+  
+    

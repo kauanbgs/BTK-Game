@@ -12,6 +12,7 @@ from assets.things import randomVillage
 from history.villages.villageEldoria import eldoriaIntro
 from history.villages.villageBrumaria import brumariaIntro
 from history.villages.villageVentogard import ventogardIntro
+from history.villages.villageSkaldenheim import skaldenheim
 
 
 def areas():
@@ -54,6 +55,10 @@ def areas():
       typedPrint("Você encontrou Ventogard!\n", Config.speed)
       time.sleep(0.5)
       ventogardIntro()
+    if randomVillage() == "Skaldenheim":
+      typedPrint("Você encontrou Skaldenheim!\n", Config.speed)
+      time.sleep(0.5)
+      skaldenheim()
 
   elif option == 2:
     if Char.veioEldoria:

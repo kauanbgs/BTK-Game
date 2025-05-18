@@ -19,12 +19,14 @@ class Char:
   deadEnemy = False
   deadPlayer = False
   where = "garbage"
+  item = "garbage"
 
   villagesVisited = 0
 
   veioEldoria = False
   veioBrumaria = False
   veioVentogard = False
+  veioSkaldenheim = False
   veioTavern = False
 
 

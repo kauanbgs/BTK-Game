@@ -7,7 +7,9 @@ from assets.config import Config
 
 
 
+
 def menu():
+  from player.inventory import inventory
   from menus.areas import areas
   from areas.tavern import tavern
   from player.status import status

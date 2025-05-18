@@ -4,8 +4,8 @@ from assets.things import Char
 
 class Itens:
     tavern = [
-        {"nome": "Poção de Vida", "preco": 5},
-        {"nome": "Poção de Ataque", "preco": 3},
+        {"nome": "Pocao de Vida", "preco": 5},
+        {"nome": "Pocao de Ataque", "preco": 3},
     ]
 
     blacksmith = [
@@ -15,6 +15,171 @@ class Itens:
         {"nome": "Espada de Platina", "preco": 40},
         {"nome": "Espada de Diamante", "preco": 60},
     ]
+
+    base_itens = {
+    "Espada": {
+        "tipo": "arma",
+        "dano": 10,
+        "peso": 5,
+        "utilizavel": False
+    },
+    "Pocao de cura": {
+        "tipo": "consumível",
+        "cura": 20,
+        "utilizavel": True
+    },
+    "Pocao de mana": {
+        "tipo": "consumível",
+        "mana": 20,
+        "utilizavel": True
+    },
+    "Pocao de forca": {
+        "tipo": "consumível",
+        "forca": 0.3,
+        "utilizavel": True
+    },
+    }
+
+    materials = {
+    "Bola de slime": {
+        "tipo": "material",
+        "propriedades": ["pegajoso", "maleável"],
+        "utilizavel": False
+    },
+    "Essencia de fogo": {
+        "tipo": "material",
+        "propriedades": ["inflamável", "energético"],
+        "utilizavel": False
+    },
+    "Escama de dragao": {
+        "tipo": "material",
+        "propriedades": ["resistente", "rígido", "mágico"],
+        "utilizavel": False
+    },
+    "Garra de lobo": {
+        "tipo": "material",
+        "propriedades": ["afiada", "leve", "letal"],
+        "utilizavel": False
+    },
+    "Pluma de fenix": {
+        "tipo": "material",
+        "propriedades": ["leve", "místico", "regenerativo"],
+        "utilizavel": False
+    },
+    }
+
+    Itens_personalizados = {
+    # Espadas personalizadas
+    "Espada pegajosa": {
+        "tipo": "arma",
+        "dano": 10,
+        "utilizavel": False
+    },
+    "Espada inflamavel": {
+        "tipo": "arma",
+        "dano": 12,
+        "utilizavel": False
+    },
+    "Espada resistente": {
+        "tipo": "arma",
+        "dano": 15,
+        "utilizavel": False
+    },
+    "Espada afiada": {
+        "tipo": "arma",
+        "dano": 18,
+        "utilizavel": False
+    },
+    "Espada magica": {
+        "tipo": "arma",
+        "dano": 20,
+        "utilizavel": False
+    },
+
+    # Poções de cura personalizadas
+    "Pocao pegajosa de cura": {
+        "tipo": "consumivel",
+        "cura": 25,
+        "utilizavel": True
+    },
+    "Pocao ardente de cura": {
+        "tipo": "consumivel",
+        "cura": 30,
+        "utilizavel": True
+    },
+    "Pocao resistente de cura": {
+        "tipo": "consumivel",
+        "cura": 35,
+        "utilizavel": True
+    },
+    "Pocao cortante de cura": {
+        "tipo": "consumivel",
+        "cura": 40,
+        "utilizavel": True
+    },
+    "Pocao magica regenerativa": {
+        "tipo": "consumivel",
+        "cura": 50,
+        "utilizavel": True
+    },
+
+    # Poções de mana personalizadas
+    "Pocao pegajosa de mana": {
+        "tipo": "consumivel",
+        "mana": 25,
+        "utilizavel": True
+    },
+    "Pocao energizante de mana": {
+        "tipo": "consumivel",
+        "mana": 30,
+        "utilizavel": True
+    },
+    "Pocao encantada de mana": {
+        "tipo": "consumivel",
+        "mana": 40,
+        "utilizavel": True
+    },
+    "Pocao aguçada de mana": {
+        "tipo": "consumivel",
+        "mana": 50,
+        "utilizavel": True
+    },
+    "Pocao de mana mistica": {
+        "tipo": "consumivel",
+        "mana": 60,
+        "utilizavel": True
+    },
+
+    # Poções de força personalizadas
+    "Pocao flexivel de forca": {
+        "tipo": "consumivel",
+        "forca": 0.7,
+        "utilizavel": True
+    },
+    "Pocao de forca ardente": {
+        "tipo": "consumivel",
+        "forca": 1,
+        "utilizavel": True
+    },
+    "Pocao de forca escamada": {
+        "tipo": "consumivel",
+        "forca": 1.3,
+        "utilizavel": True
+    },
+    "Pocao de forca selvagem": {
+        "tipo": "consumivel",
+        "forca": 1.5,
+        "utilizavel": True
+    },
+    "Pocao de forca renascente": {
+        "tipo": "consumivel",
+        "forca": 2,
+        "utilizavel": True
+    },
+}
+
+
+
 
 class Village:
     village_names = [
@@ -50,7 +215,7 @@ class Flashback:
         "No reflexo de sua espada, vê-se mais velho, cansado, cercado por túmulos. Todos nomes que ele não conseguiu salvar.",
         "Caminhando pela feira de Vargrid, ouve gritos. É uma revolta. No meio da multidão, alguém grita: 'Aton traiu Skalice!'",
         "Durante um sonho, acorda em uma cela. Guardas o observam com medo. Um aviso ecoa: 'O futuro não te perdoa.'",
-        "Diante do espelho d’água em Várdann, vê a si mesmo como rei. Atrás, seu reino queimava.",
+        "Diante do espelho d água em Várdann, vê a si mesmo como rei. Atrás, seu reino queimava.",
         "Aton caminha por um campo destruído — reconhece a armadura no chão. Era sua. Mas ele nunca esteve ali... ainda.",
         "Em uma fortaleza distante, alguém lê um livro. Na capa: 'Crônicas do Redentor de Skalice'. Mas Aton nunca escreveu isso."
     ]
