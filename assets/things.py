@@ -77,6 +77,22 @@ def revealChar(npc_name, initial_text, final_text, speed=0.045):
     typedPrint(final_text + "\n", speed)
     time.sleep(2)
 
+def revealChar2(npc_name, initial_text, final_text, speed=0.045):
+    clearScreen()
+    print("???: ", end="")
+    typedPrint(initial_text + "\n", speed)
+    
+    print("???: ", end="")
+    typedPrint(f"Mi nombre é {npc_name}", speed)
+    
+    time.sleep(1)
+    clearScreen()
+    
+    print(f"{npc_name}: {initial_text}")
+    print(f"{npc_name}: Mi nombre é {npc_name}, ", end="")
+    typedPrint(final_text + "\n", speed)
+    time.sleep(2)
+
 def updateStatus(item):
   from player.inventory import inventory, inventoryItens
 
@@ -141,8 +157,10 @@ def weaponThings():
     typedPrint("Guardando arma...", Config.speed)
     time.sleep(1)
     if Char.classplayer == 1:
+      weaponsInventory.append((Char.weapon))
       Char.weapon = "Espada gasta"
     else:
+      weaponsInventory.append((Char.weapon))
       Char.weapon = "Cajado antigo"
     refreshDamage()
 
@@ -239,28 +257,28 @@ def tools():
     option = input("Escolha um item para equipar: ")
 
     if not option.isdigit():
-        os.system('cls')
+        clearScreen()
         print("Opção inválida!")
         time.sleep(1)
-        os.system('cls')
+        clearScreen()
         tools()
     else:
         option = int(option)
 
         if option == 0:
-            os.system('cls')
+            clearScreen()
             return
 
         if 1 <= option <= len(armas_disponiveis):
             Char.weapon = armas_disponiveis[option - 1]
-            os.system('cls')
+            clearScreen()
             print(f"Você equipou: {Char.weapon}")
             refreshDamage()
             time.sleep(1)
-            os.system('cls')
+            clearScreen()
         else:
-            os.system('cls')
+            clearScreen
             print("Opção inválida!")
             time.sleep(1)
-            os.system('cls')
+            clearScreen()
             tools()

@@ -23,7 +23,7 @@ class Char:
   item = "garbage"
 
   villagesVisited = 0
-  foiFerreiro = False
+  veioFerreiro = False
   veioEldoria = False
   veioBrumaria = False
   veioVentogard = False
