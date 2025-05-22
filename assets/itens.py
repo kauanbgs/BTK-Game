@@ -368,3 +368,35 @@ class Flashback:
         "Aton caminha por um campo destruído — reconhece a armadura no chão. Era sua. Mas ele nunca esteve ali... ainda.",
         "Em uma fortaleza distante, alguém lê um livro. Na capa: 'Crônicas do Redentor de Skalice'. Mas Aton nunca escreveu isso."
     ]
+
+
+class Spells:
+    spells_database = {
+    # Básicas
+    "bola de fogo": {"nivel": "basica", "tipo": "dano", "dano": 30, "custo": 20, "ascii": "🔥"},
+    "cura simples": {"nivel": "basica", "tipo": "cura", "cura": 25, "custo": 20, "ascii": "✨"},
+    "seta arcana": {"nivel": "basica", "tipo": "dano", "dano": 20, "custo": 10, "ascii": "💫"},
+    "luz cegante": {"nivel": "basica", "tipo": "debuff", "efeito": "cego", "turnos": 1, "custo": 15, "ascii": "🌟"},
+    "rajada de vento": {"nivel": "basica", "tipo": "controle", "efeito": "derrubar", "custo": 10, "ascii": "💨"},
+
+    # Intermediárias
+    "lanca de gelo": {"nivel": "intermediaria", "tipo": "dano", "dano": 40, "efeito": "congelar", "chance": 40, "custo": 30, "ascii": "❄️"},
+    "corrente eletrica": {"nivel": "intermediaria", "tipo": "dano_area", "dano": 35, "alvos": 3, "custo": 35, "ascii": "⚡"},
+    "barreira arcana": {"nivel": "intermediaria", "tipo": "buff", "efeito": "defesa_magica", "turnos": 3, "custo": 25, "ascii": "🛡️"},
+    "enfraquecer": {"nivel": "intermediaria", "tipo": "debuff", "efeito": "reduzir_ataque", "turnos": 2, "custo": 20, "ascii": "🕸️"},
+    "vampirismo menor": {"nivel": "intermediaria", "tipo": "dano_cura", "dano": 30, "cura_percent": 50, "custo": 30, "ascii": "🩸"},
+
+    # Avançadas
+    "explosao arcana": {"nivel": "avancada", "tipo": "dano_area", "dano": 60, "custo": 50, "ascii": "💥"},
+    "prisao de sombras": {"nivel": "avancada", "tipo": "debuff", "efeito": "paralisar", "turnos": 2, "custo": 40, "ascii": "🌑"},
+    "chuva de meteoros": {"nivel": "avancada", "tipo": "dano_area", "dano": 70, "custo": 60, "ascii": "☄️"},
+    "grito psiquico": {"nivel": "avancada", "tipo": "controle", "efeito": "atordoar", "turnos": 1, "custo": 35, "ascii": "🧠"},
+    "corrupcao vital": {"nivel": "avancada", "tipo": "dano_cura_turnos", "dano_por_turno": 20, "turnos": 3, "cura_percent": 30, "custo": 45, "ascii": "🕷️"},
+
+    # Proibidas
+    "tempestade do vazio": {"nivel": "proibida", "tipo": "dano_area", "dano": 100, "chance_morte": 10, "custo": 80, "ascii": "🌪️🌌"},
+    "toque necrotico": {"nivel": "proibida", "tipo": "dano", "dano": 90, "drena_mana": 30, "custo": 70, "ascii": "💀"},
+    "evocacao de mortos": {"nivel": "proibida", "tipo": "invocar", "invocar": "esqueleto", "quantidade": 2, "custo": 65, "ascii": "☠️☠️"},
+    "pacto demoniaco": {"nivel": "proibida", "tipo": "buff_risco", "efeito": "dano_triplo", "custo": "50%_vida", "ascii": "😈"},
+    "anulacao existencial": {"nivel": "proibida", "tipo": "morte_instantanea", "chance": 15, "custo": 90, "ascii": "🌑🚫"},
+}

@@ -8,6 +8,9 @@ from areas.fundition import joinItens
 from player.inventory import inventory
 from areas.fundition import showItens
 from areas.blacksmith import blacksmithIntro
+from resources.duel import duel
+from assets.things import DicesAnimation
 
 # joinItens("pocao de cura", "pluma de fenix")
-blacksmithIntro()
+# duel("Goblin", 50, [("Wind Arrow", 7), ("Lightning Bolt", 10)], boss=False)
+DicesAnimation()

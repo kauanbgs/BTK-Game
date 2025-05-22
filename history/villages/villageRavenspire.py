@@ -1,5 +1,3 @@
-#File made by: Kauan
-
 from player.status import Char
 import os
 import time
@@ -9,36 +7,36 @@ from menus.menu import menu
 from assets.config import Config
 from assets.config import Char
 from areas.tavern import tavern
-from areas.blacksmith import blacksmith
+from areas.learnSpells import learnSpells
 
-def brumariaIntro():
-  if Char.veioBrumaria:
-    brumaria()
+def ravenspireIntro():
+  if Char.veioRavenspire:
+    ravenspire()
   Char.villagesVisited += 1
   clearScreen( )
-  typedPrint(f"Depois de muito tempo caminhando, {Char.Name} avistou Brumaria.\n", Config.speed)
-  typedPrint("Onde as mais belas armas das dez vilas são formadas, bem vindo à terra da forja!\n", Config.speed)
+  typedPrint(f"{Char.Name}, depois de perceber que precisava de conhecimento, encontrou Ravenspire.\n", Config.speed)
+  typedPrint("Uma cidade mágica, com aura extremamente confortante e cheia de de surpresas.\n", Config.speed)
   time.sleep(1)
   print("")
-  typedPrint(f"Aqui, {Char.Name} pode acessar o Ferreiro.\n", Config.speed)
+  typedPrint(f"Aqui, {Char.Name} pode aprender magias.\n", Config.speed)
   time.sleep(2.5)
-  brumaria()
+  ravenspire()
 
 
-def brumaria():
-  Char.veioBrumaria = True
-  Char.where = "Brumaria"
+def ravenspire():
+  Char.veioRavenspire = True
+  Char.where = "Ravenspire"
   clearScreen()
   print(f"Você está atualmente em: {Char.where}\n")
   print("[0] - Voltar a praia")
-  print("[1] - Ferreiro")
+  print("[1] - Feiticeiro")
   option = input("Escolha uma opção: ")
 
   if not option.isdigit():
     clearScreen()
     print("Opção inválida!")
     time.sleep(1)
-    brumaria()
+    ravenspire()
   else:
     option = int(option)
   
@@ -46,7 +44,7 @@ def brumaria():
     clearScreen()
     print("Opção não existente.")
     time.sleep(1)
-    brumaria()
+    ravenspire()
 
   elif option == 0:
     clearScreen()
@@ -55,8 +53,8 @@ def brumaria():
     menu()
   elif option == 1:
     clearScreen()
-    typedPrint("Encontrando o ferreiro...", Config.speed)
+    typedPrint("Encontrando o feiticeiro", Config.speed)
     time.sleep(.3)
-    blacksmith()
+    learnSpells()
 
 

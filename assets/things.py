@@ -282,3 +282,10 @@ def tools():
             time.sleep(1)
             clearScreen()
             tools()
+
+def DicesAnimation():
+   for i in range(15):
+      print(f"{random.randint(1, 20)}")
+      time.sleep(0.1)
+      clearScreen()
+      

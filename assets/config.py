@@ -21,9 +21,13 @@ class Char:
   deadPlayer = False
   where = "garbage"
   item = "garbage"
+  spells = []
+  status = []
+  summons = []
 
   villagesVisited = 0
   veioFerreiro = False
+  veioFeiticeiro = False
   veioEldoria = False
   veioBrumaria = False
   veioVentogard = False

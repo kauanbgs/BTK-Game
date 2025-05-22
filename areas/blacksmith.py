@@ -57,12 +57,22 @@ def blacksmith():
       weaponsInventory.append(Itens.blacksmith[0]["nome"])
       time.sleep(1)
       blacksmith()
+    else:
+      clearScreen()
+      typedPrint("Você não tem moedas suficientes!", Config.speed)
+      time.sleep(1)
+      blacksmith()
   elif option == 2:
     if Char.coins >= Itens.blacksmith[1]["preco"]:
       clearScreen()
       typedPrint(f"claro, claro! aquí está tu {Itens.blacksmith[0]["nome"]}!", Config.speed)
       Char.coins -= Itens.blacksmith[1]["preco"]
       weaponsInventory.append(Itens.blacksmith[1]["nome"])
+      time.sleep(1)
+      blacksmith()
+    else:
+      clearScreen()
+      typedPrint("Você não tem moedas suficientes!", Config.speed)
       time.sleep(1)
       blacksmith()
   elif option == 3:
@@ -73,6 +83,11 @@ def blacksmith():
       weaponsInventory.append(Itens.blacksmith[2]["nome"])
       time.sleep(1)
       blacksmith()
+    else:
+      clearScreen()
+      typedPrint("Você não tem moedas suficientes!", Config.speed)
+      time.sleep(1)
+      blacksmith()
   elif option == 4:
     if Char.coins >= Itens.blacksmith[3]["preco"]:
       clearScreen()
@@ -81,12 +96,22 @@ def blacksmith():
       weaponsInventory.append(Itens.blacksmith[3]["nome"])
       time.sleep(1)
       blacksmith()
+    else:
+      clearScreen()
+      typedPrint("Você não tem moedas suficientes!", Config.speed)
+      time.sleep(1)
+      blacksmith()
   elif option == 5:
     if Char.coins >= Itens.blacksmith[4]["preco"]:
       clearScreen()
       typedPrint(f"claro, claro! aquí está tu {Itens.blacksmith[4]["nome"]}!", Config.speed)
       Char.coins -= Itens.blacksmith[4]["preco"]
       weaponsInventory.append(Itens.blacksmith[4]["nome"])
+      time.sleep(1)
+      blacksmith()
+    else:
+      clearScreen()
+      typedPrint("Você não tem moedas suficientes!", Config.speed)
       time.sleep(1)
       blacksmith()
 
