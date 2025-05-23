@@ -284,8 +284,154 @@ def tools():
             tools()
 
 def DicesAnimation():
-   for i in range(15):
+    for i in range(15):
+      print("O dado rolou: ", end='')
       print(f"{random.randint(1, 20)}")
       time.sleep(0.1)
       clearScreen()
+    print()
+
+def d20():
+   ree = random.randint(1, 20)
+   return ree
       
+def attackAnimation():
+    jogador = ["aton", " o ", "/|\\ 🗡", "/_\\"]
+    inimigo  = ["   inimigo", "     o ", "  🖊 /|\\", "____/_\\"]
+
+    clearScreen()
+    print(f"""
+    ______________________________________
+    |                                     |
+    |                   ATAQUE!           |
+    |                                     |
+    |            {jogador[0]}         {inimigo[0]}  |
+    |            {jogador[1]}           {inimigo[1]}    |
+    |            {jogador[2]}         {inimigo[2]}    |
+    |____________{jogador[3]}___________{inimigo[3]}____|
+    """)
+    time.sleep(.5)
+    clearScreen()
+    print(f"""
+    ______________________________________
+    |                                     |
+    |                   ATAQUE!           |
+    |                                     |
+    |               {jogador[0]}      {inimigo[0]}  |
+    |               {jogador[1]}        {inimigo[1]}    |
+    |               {jogador[2]}      {inimigo[2]}    |
+    |_______________{jogador[3]}________{inimigo[3]}____|
+    """)
+    time.sleep(.5)
+    clearScreen()
+    print(f"""
+    ______________________________________
+    |                                     |
+    |                   ATAQUE!           |
+    |                                     |
+    |                  {jogador[0]}   {inimigo[0]}  |
+    |                  {jogador[1]}     {inimigo[1]}    |
+    |                  {jogador[2]}   {inimigo[2]}    |
+    |__________________{jogador[3]}_____{inimigo[3]}____|
+    """)
+
+    time.sleep(.5)
+    clearScreen()
+
+    print(f"""
+    ______________________________________
+    |                                     |
+    |                   ATAQUE!           |
+    |                                     |
+    |                    {jogador[0]} {inimigo[0]}  |
+    |                    {jogador[1]}   {inimigo[1]}    |
+    |                    {jogador[2]} {inimigo[2]}    |
+    |____________________{jogador[3]}___{inimigo[3]}____|
+    """)
+
+    time.sleep(.5)
+    clearScreen()
+
+    print(f"""
+    ______________________________________
+    |                                     |
+    |                   ATAQUE!           |
+    |                                     |
+    |                      {jogador[0]}{inimigo[0]} |
+    |                      {jogador[1]}  {inimigo[1]} 🩸|
+    |                      {jogador[2]}{inimigo[2]}   |
+    |______________________{jogador[3]}__{inimigo[3]}___|
+    """)
+    time.sleep(2)
+
+def magicAttackAnimation(ascii):
+    jogador = ["aton", " o ", f"/|\\ {ascii}", "/_\\"]
+    inimigo = ["   inimigo", "     o ", "  🖊 /|\\", "____/_\\"]
+
+    clearScreen()
+    print(f"""
+    ______________________________________
+    |                                     |
+    |               MAGIA LANÇADA!        |
+    |                                     |
+    |            {jogador[0]}         {inimigo[0]}  |
+    |            {jogador[1]}           {inimigo[1]}    |
+    |            {jogador[2]}         {inimigo[2]}    |
+    |____________{jogador[3]}___________{inimigo[3]}____|
+    """)
+    time.sleep(0.5)
+    clearScreen()
+
+    print(f"""
+    ______________________________________
+    |                                     |
+    |               MAGIA LANÇADA!        |
+    |                                     |
+    |               {jogador[0]}      {inimigo[0]}  |
+    |               {jogador[1]}        {inimigo[1]}    |
+    |               {jogador[2]}      {inimigo[2]}    |
+    |_______________{jogador[3]}________{inimigo[3]}____|
+    """)
+    time.sleep(0.5)
+    clearScreen()
+
+    print(f"""
+    ______________________________________
+    |                                     |
+    |               MAGIA LANÇADA!        |
+    |                                     |
+    |                  {jogador[0]}   {inimigo[0]}  |
+    |                  {jogador[1]}     {inimigo[1]}    |
+    |                  {jogador[2]}   {inimigo[2]}    |
+    |__________________{jogador[3]}_____{inimigo[3]}____|
+    """)
+    time.sleep(0.5)
+    clearScreen()
+
+    print(f"""
+    ______________________________________
+    |                                     |
+    |               MAGIA LANÇADA!        |
+    |                                     |
+    |                    {jogador[0]} {inimigo[0]}  |
+    |                    {jogador[1]}   {inimigo[1]}    |
+    |                    {jogador[2]} {inimigo[2]}    |
+    |____________________{jogador[3]}___{inimigo[3]}____|
+    """)
+    time.sleep(0.5)
+    clearScreen()
+
+    print(f"""
+    ______________________________________
+    |                                     |
+    |               MAGIA LANÇADA!        |
+    |                                     |
+    |                      {jogador[0]}{inimigo[0]} |
+    |                      {jogador[1]}  {inimigo[1]} 🩸|
+    |                      {jogador[2]}{inimigo[2]}   |
+    |______________________{jogador[3]}__{inimigo[3]}___|
+    """)
+    time.sleep(2)
+    clearScreen()
+
+

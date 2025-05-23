@@ -12,5 +12,4 @@ from resources.duel import duel
 from assets.things import DicesAnimation
 
 # joinItens("pocao de cura", "pluma de fenix")
-# duel("Goblin", 50, [("Wind Arrow", 7), ("Lightning Bolt", 10)], boss=False)
-DicesAnimation()
+duel("Goblin", 50, 1.0, 50, ["bola de fogo"], boss=False)

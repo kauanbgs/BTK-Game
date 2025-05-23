@@ -8,7 +8,7 @@ class Config:
 class Char:
   classplayer = 0
   Name = "garbage"
-  mana = 0
+  mana = 200 #CHANGE THIS
   health = 100
   attack = 0
   attack_base = 1.3
@@ -21,7 +21,7 @@ class Char:
   deadPlayer = False
   where = "garbage"
   item = "garbage"
-  spells = []
+  spells = ["bola de fogo"] # CHANGE THIS
   status = []
   summons = []
 
