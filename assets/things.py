@@ -296,7 +296,7 @@ def d20():
    return ree
       
 def attackAnimation():
-    jogador = ["aton", " o ", "/|\\ 🗡", "/_\\"]
+    jogador = ["você", " o ", "/|\\ 🗡", "/_\\"]
     inimigo  = ["   inimigo", "     o ", "  🖊 /|\\", "____/_\\"]
 
     clearScreen()
@@ -365,7 +365,7 @@ def attackAnimation():
     time.sleep(2)
 
 def magicAttackAnimation(ascii):
-    jogador = ["aton", " o ", f"/|\\ {ascii}", "/_\\"]
+    jogador = ["você", " o ", f"/|\\ {ascii}", "/_\\"]
     inimigo = ["   inimigo", "     o ", "  🖊 /|\\", "____/_\\"]
 
     clearScreen()

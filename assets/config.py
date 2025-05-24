@@ -21,7 +21,7 @@ class Char:
   deadPlayer = False
   where = "garbage"
   item = "garbage"
-  spells = ["bola de fogo"] # CHANGE THIS
+  spells = ["bola de fogo", "seta arcana", "grito psiquico", "evocacao de mortos"] # CHANGE THIS
   status = []
   summons = []
 

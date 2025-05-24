@@ -372,28 +372,120 @@ class Flashback:
 
 class Spells:
     spells_database = {
-    # Básicas
-    "bola de fogo": {"nivel": "basica", "tipo": "dano", "dano": 30, "custo": 20, "ascii": "🔥"},
-    "seta arcana": {"nivel": "basica", "tipo": "dano", "dano": 20, "custo": 10, "ascii": "💫"},
-    "luz cegante": {"nivel": "basica", "tipo": "debuff", "efeito": "cego", "turnos": 1, "custo": 15, "ascii": "🌟"},
-    "rajada de vento": {"nivel": "basica", "tipo": "controle", "efeito": "derrubar", "custo": 10, "ascii": "💨"},
+        # 🔥 Básicas
+        "bola de fogo": {"nivel": "basica", "tipo": "dano", "dano": 30, "custo": 20, "ascii": "🔥"},
+        "seta arcana": {"nivel": "basica", "tipo": "dano", "dano": 20, "custo": 10, "ascii": "💫"},
+        "luz cegante": {"nivel": "basica", "tipo": "debuff", "efeito": "cego", "turnos": 1, "custo": 15, "ascii": "🌟"},
+        "rajada de vento": {"nivel": "basica", "tipo": "controle", "efeito": "derrubar", "custo": 10, "ascii": "💨"},
+        "escudo magico": {"nivel": "basica", "tipo": "buff", "efeito": "defesa_magica", "turnos": 2, "custo": 15, "ascii": "🛡️"},
+        "cura leve": {"nivel": "basica", "tipo": "buff", "efeito": "cura", "valor": 25, "custo": 15, "ascii": "💖"},
+        "misseis etereos": {"nivel": "basica", "tipo": "dano", "dano": 25, "custo": 18, "ascii": "✨"},
+        "onda sonica": {"nivel": "basica", "tipo": "controle", "efeito": "atordoar", "turnos": 1, "custo": 15, "ascii": "🔊"},
 
-    # Intermediárias
-    "lanca de gelo": {"nivel": "intermediaria", "tipo": "dano", "dano": 40, "efeito": "congelar", "chance": 40, "custo": 30, "ascii": "❄️"},
-    "corrente eletrica": {"nivel": "intermediaria", "tipo": "dano_area", "dano": 35, "alvos": 3, "custo": 35, "ascii": "⚡"},
-    "barreira arcana": {"nivel": "intermediaria", "tipo": "buff", "efeito": "defesa_magica", "turnos": 3, "custo": 25, "ascii": "🛡️"},
-    "enfraquecer": {"nivel": "intermediaria", "tipo": "debuff", "efeito": "reduzir_ataque", "turnos": 2, "custo": 20, "ascii": "🕸️"},
+        # ❄️ Intermediárias
+        "lanca de gelo": {"nivel": "intermediaria", "tipo": "dano", "dano": 40, "efeito": "congelar", "chance": 40, "custo": 30, "ascii": "❄️"},
+        "corrente eletrica": {"nivel": "intermediaria", "tipo": "dano_area", "dano": 35, "alvos": 3, "custo": 35, "ascii": "⚡"},
+        "barreira arcana": {"nivel": "intermediaria", "tipo": "buff", "efeito": "defesa_magica", "turnos": 3, "custo": 25, "ascii": "🛡️"},
+        "enfraquecer": {"nivel": "intermediaria", "tipo": "debuff", "efeito": "reduzir_ataque", "turnos": 2, "custo": 20, "ascii": "🕸️"},
+        "aura flamejante": {"nivel": "intermediaria", "tipo": "buff", "efeito": "dano_aura", "valor": 10, "turnos": 3, "custo": 30, "ascii": "🔥"},
+        "espinhos magicos": {"nivel": "intermediaria", "tipo": "buff", "efeito": "refletir_dano_fisico", "valor": 20, "turnos": 3, "custo": 28, "ascii": "🌵"},
+        "tempestade de gelo": {"nivel": "intermediaria", "tipo": "dano_area", "dano": 45, "efeito": "congelamento", "chance": 30, "custo": 40, "ascii": "❄️❄️"},
+        "corrupcao vital": {"nivel": "intermediaria", "tipo": "debuff", "efeito": "cura_vira_dano", "turnos": 2, "custo": 25, "ascii": "🩸"},
 
-    # Avançadas
-    "explosao arcana": {"nivel": "avancada", "tipo": "dano_area", "dano": 60, "custo": 50, "ascii": "💥"},
-    "prisao de sombras": {"nivel": "avancada", "tipo": "debuff", "efeito": "paralisar", "turnos": 2, "custo": 40, "ascii": "🌑"},
-    "chuva de meteoros": {"nivel": "avancada", "tipo": "dano_area", "dano": 70, "custo": 60, "ascii": "☄️"},
-    "grito psiquico": {"nivel": "avancada", "tipo": "controle", "efeito": "atordoar", "turnos": 1, "custo": 35, "ascii": "🧠"},
+        # 💥 Avançadas
+        "explosao arcana": {"nivel": "avancada", "tipo": "dano_area", "dano": 60, "custo": 50, "ascii": "💥"},
+        "prisao de sombras": {"nivel": "avancada", "tipo": "debuff", "efeito": "paralisar", "turnos": 2, "custo": 40, "ascii": "🌑"},
+        "chuva de meteoros": {"nivel": "avancada", "tipo": "dano_area", "dano": 70, "custo": 60, "ascii": "☄️"},
+        "grito psiquico": {"nivel": "avancada", "tipo": "controle", "efeito": "atordoar", "turnos": 1, "custo": 35, "ascii": "🧠"},
+        "furia berserker": {"nivel": "avancada", "tipo": "buff", "efeito": "aumento_ataque", "valor": 50, "penalidade_defesa": 30, "turnos": 2, "custo": 40, "ascii": "🔥"},
+        "aceleracao temporal": {"nivel": "avancada", "tipo": "buff", "efeito": "acao_dupla", "chance": 50, "turnos": 2, "custo": 45, "ascii": "⏩"},
+        "maldicao ancestral": {"nivel": "avancada", "tipo": "debuff", "efeito": "receber_mais_dano", "valor": 30, "turnos": 3, "custo": 45, "ascii": "☠️"},
+        "silencio absoluto": {"nivel": "avancada", "tipo": "debuff", "efeito": "impedir_magias", "turnos": 2, "custo": 40, "ascii": "🔇"},
 
-    # Proibidas
-    "tempestade do vazio": {"nivel": "proibida", "tipo": "dano_area", "dano": 100, "chance_morte": 10, "custo": 80, "ascii": "🌪️🌌"},
-    "toque necrotico": {"nivel": "proibida", "tipo": "dano", "dano": 90, "drena_mana": 30, "custo": 70, "ascii": "💀"},
-    "evocacao de mortos": {"nivel": "proibida", "tipo": "invocar", "invocar": "esqueleto", "quantidade": 2, "custo": 65, "ascii": "☠️☠️"},
-    "pacto demoniaco": {"nivel": "proibida", "tipo": "buff_risco", "efeito": "dano_triplo", "custo": "50%_vida", "ascii": "😈"},
-    "anulacao existencial": {"nivel": "proibida", "tipo": "morte_instantanea", "chance": 15, "custo": 90, "ascii": "🌑🚫"},
+        # 🔮 Proibidas
+        "tempestade do vazio": {"nivel": "proibida", "tipo": "dano_area", "dano": 100, "chance_morte": 10, "custo": 80, "ascii": "🌪️🌌"},
+        "toque necrotico": {"nivel": "proibida", "tipo": "dano", "dano": 90, "drena_mana": 30, "custo": 70, "ascii": "💀"},
+        "evocacao de mortos": {"nivel": "proibida", "tipo": "invocar", "invocar": "esqueletos", "quantidade": 2, "custo": 65, "ascii": "☠️☠️"},
+        "pacto demoniaco": {"nivel": "proibida", "tipo": "buff_risco", "efeito": "dano_triplo", "custo": "50%_vida", "ascii": "😈"},
+        "anulacao existencial": {"nivel": "proibida", "tipo": "morte_instantanea", "chance": 15, "custo": 90, "ascii": "🌑🚫"},
+        "prisao temporal": {"nivel": "proibida", "tipo": "controle", "efeito": "congelar_tempo", "turnos": 1, "custo": 75, "ascii": "⏳"},
+        "pacto sombrio": {"nivel": "proibida", "tipo": "buff_risco", "efeito": "dano_triplo", "penalidade": "perder_10hp_por_turno", "turnos": 3, "custo": 70, "ascii": "😈"},
+        "invocacao do abismo": {"nivel": "proibida", "tipo": "invocar", "invocar": "demonio", "quantidade": 1, "custo": 80, "ascii": "👹"},
+        "colera dos antigos": {"nivel": "proibida", "tipo": "dano_area", "dano": 120, "efeito": "sangramento", "chance": 50, "custo": 100, "ascii": "🌋"},
+    }
+
+class Enemy:
+    enemies = {
+    "Slime": {
+        "hp": 80,
+        "attack": 1.0,
+        "mana": 20,
+        "spells": [],
+        "boss": False,
+        "drop": "Bola de slime"
+    },
+    "Dragão Jovem": {
+        "hp": 250,
+        "attack": 4.0,
+        "mana": 100,
+        "spells": ["Sopro de Fogo"],
+        "boss": True,
+        "drop": "Escama de dragao"
+    },
+    "Lobo Feroz": {
+        "hp": 120,
+        "attack": 2.5,
+        "mana": 0,
+        "spells": [],
+        "boss": False,
+        "drop": "Garra de lobo"
+    },
+    "Fênix": {
+        "hp": 200,
+        "attack": 3.0,
+        "mana": 150,
+        "spells": ["Chama da Ressurreição"],
+        "boss": True,
+        "drop": "Pluma de fenix"
+    },
+    "Elemental de Fogo": {
+        "hp": 150,
+        "attack": 3.5,
+        "mana": 120,
+        "spells": ["Onda de Chamas", "Bola de Fogo"],
+        "boss": False,
+        "drop": "Essencia de fogo"
+    },
+    "Rei Slime": {
+        "hp": 300,
+        "attack": 5.0,
+        "mana": 50,
+        "spells": ["Divisão de Slime"],
+        "boss": True,
+        "drop": "Bola de slime"
+    },
+    "Dragonete": {
+        "hp": 150,
+        "attack": 2.0,
+        "mana": 50,
+        "spells": [],
+        "boss": False,
+        "drop": "Escama de dragao"
+    },
+    "Lobo Alfa": {
+        "hp": 180,
+        "attack": 3.5,
+        "mana": 0,
+        "spells": [],
+        "boss": True,
+        "drop": "Garra de lobo"
+    },
+    "Espírito das Chamas": {
+        "hp": 130,
+        "attack": 2.8,
+        "mana": 100,
+        "spells": ["Bola de Fogo"],
+        "boss": False,
+        "drop": "Essencia de fogo"
+    }
 }
